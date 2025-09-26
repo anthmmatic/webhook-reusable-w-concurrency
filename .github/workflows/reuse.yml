@@ -1,10 +1,15 @@
 on:
   workflow_call:
+    inputs:
+      env:
+        type: string
+        required: true
 
-concurrency: groupone
+
 
 jobs:
   job-name:
     runs-on: ubuntu-latest
+    concurrency: ${{ inputs.env }}
     steps:
       - run: echo 'done'
