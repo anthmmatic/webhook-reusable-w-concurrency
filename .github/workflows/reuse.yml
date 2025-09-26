@@ -4,12 +4,11 @@ on:
       env:
         type: string
         required: true
-
-
+        
+concurrency: ${{ inputs.env }}
 
 jobs:
   job-name:
     runs-on: ubuntu-latest
-    concurrency: ${{ inputs.env }}
     steps:
       - run: echo 'done'
