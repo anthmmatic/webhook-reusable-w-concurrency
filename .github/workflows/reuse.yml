@@ -1,9 +1,10 @@
 on:
   workflow_call:
 
+concurrency: groupone
+
 jobs:
   job-name:
-    concurrency: groupone
     runs-on: ubuntu-latest
     steps:
       - run: echo 'done'
